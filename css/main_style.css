@@ -547,6 +547,7 @@ body {
 }
 .inner_event li h4:hover{
     box-shadow: 10px 10px 40px rgba(146, 146, 146, 0.407) inset;
+    transform: translate(5px, -5px);
 }
 .inner_event li h3{
     margin-top: 40px;
