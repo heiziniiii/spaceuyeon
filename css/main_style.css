@@ -80,6 +80,14 @@ body {
     font-size: 16px;
     line-height: 1.7em;
 }
+#wrap{
+    min-width: 1320px;
+}
+#header_wrap{
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+}
 #header {
     margin: 0 auto;
     width: 1320px;
@@ -89,16 +97,15 @@ body {
     align-items: center;
     /* background-color: #ccc; */
 }
-
-#movie {
-    overflow: hidden;
-    margin: 0 auto;
-    height: 800px;
-    background-image: url(../images/main/asdsafvdf.png);
-    background-position: center;
-    background-repeat: no-repeat;
+#movie h1 img{
+    /* 여기 비디오로 바꾸면됨! */
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 1920px;
+    margin-left: -960px;
+    z-index: -1;
 }
-
 .gnb {
     display: flex;
 }
