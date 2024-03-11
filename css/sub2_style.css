@@ -6,7 +6,36 @@
     font-weight: normal;
     font-style: normal;
 }
+@keyframes motion {
+    0% {
+        top: 0;
+        right: 300px;
+    }
+    50% {
+        top: -30px;
+        right: 300px;
+    }
 
+    100% {
+        top: 0;
+        right: 300px;
+    }
+}
+@keyframes motion2 {
+    0% {
+        bottom: 0px;
+        right: 300px;
+    }
+    50% {
+        bottom: -30px;
+        right: 300px;
+    }
+
+    100% {
+        bottom: 0px;
+        right: 300px;
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body,
@@ -60,7 +89,9 @@ body {
     font-size: 16px;
     line-height: 1.7em;
 }
-
+#wrap{
+    min-width: 1400px;
+}
 #banner {
     overflow: hidden;
     height: 662px;
@@ -221,11 +252,13 @@ body {
     left: -80px;
 }
 .deco2{
+    animation: motion linear 3s infinite;
     position: absolute;
-    top: -30px;
+    top: 0px;
     right: 300px;
 }
 .deco3{
+    animation: motion2 linear 3s infinite;
     position: absolute;
     bottom: -30px;
     left: 300px;
