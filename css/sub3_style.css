@@ -62,7 +62,7 @@ body {
     min-width: 1400px;
 }
 #banner{
-    background-image: url(../images/sub3/sub_3_banner.png);
+    background-image: url(../images/sub3/re_banner.png);
     background-position: center;
     background-repeat: no-repeat;
     height: 662px;
@@ -245,7 +245,21 @@ body {
     position: absolute;
     top: 100px;
     right: -35px;
+}
+#content_rental ul li:nth-child(1){
     z-index: 9;
+}
+#content_rental ul li:nth-child(2){
+    z-index: 8;
+}
+#content_rental ul li:nth-child(3){
+    z-index: 7;
+}
+#content_rental ul li:nth-child(4){
+    z-index: 6;
+}
+#content_rental ul li:nth-child(5){
+    z-index: 5;
 }
 .rental_apply{
     margin-top: 50px;
