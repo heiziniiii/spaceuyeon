@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+legend,
+li,
+ol,
+p,
+select,
+table,
+td,
+textarea,
+th,
+ul,
+span,
+strong,
+em {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'S-CoreDream-3Light';
+    font-size: 16px;
+    line-height: 1.7em;
+}
+#wrap{
+    min-width: 1400px;
+}
+#banner{
+    background-image: url(../images/sub4/sub4banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 662px;
+}
+#container{
+    margin: 0 auto;
+    width: 1320px;
+    height: 3735px;
+    padding-top: 160px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+#container h1{
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+.goodslist1{
+    float: left;
+}
+.goodslist2{
+    margin-top: 400px;
+    float: right;
+}
+.goodslist1 li,
+.goodslist2 li{
+    width: 550px;
+    height: 650px;
+    border: 2px solid #ED6E1B;
+    padding: 40px;
+    overflow: hidden;
+    color: #ED6E1B;
+    font-weight: 700;
+    margin: 100px 0;
+}
+.number{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.round{
+    background-color: #ED6E1B;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    z-index: -9;
+}
+.center{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 500px;
+    position: relative;
+}
+.note .center h6{
+    position: absolute;
+    top: 55px;
+    left: 128px;
+}
+.cup .center h6{
+    position: absolute;
+    top: 78px;
+    left: 119px;
+}
+.bag .center h6{
+    position: absolute;
+    top: 0;
+    left: 160px;
+}
+.pin .center h6{
+    position: absolute;
+    top: 133px;
+    left: 90px;
+}
+.bookmark .center h6{
+    position: absolute;
+    top: 9px;
+    left: 27px;
+}
+.pen .center h6{
+    position: absolute;
+    top: 49px;
+    left: 116px;
+}
+.ma_te .center h6{
+    position: absolute;
+    top: 69px;
+    left: 77px;
+}
+.obg:hover .round{
+    transform: scale(3.3);
+    z-index: -9;
+    transition: all 0.5s;
+}
+.obg:hover{
+    color: #fff;
+}
+.price{
+    margin-top: 15px;
+}
+#container h5{
+    position: absolute;
+    bottom: 195px;
+    left: 248px;
+}
+#container h4{
+    position: absolute;
+    top: 638px;
+    right: 248px;
+}
