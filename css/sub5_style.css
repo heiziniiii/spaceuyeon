@@ -104,7 +104,6 @@ body {
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
-}
-#goodsbanner img{
-    display: block;
+    background: url(../images/sub5/eventgoodsbanner.png) no-repeat center;
+    height: 370px;
 }
