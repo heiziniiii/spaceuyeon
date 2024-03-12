@@ -119,6 +119,9 @@ body {
     margin: 0 auto;
     height: 2433px;
 }
+.content_drection{
+    overflow: hidden;
+}
 .content_drection,
 .content_strategy{
     text-align: center;
