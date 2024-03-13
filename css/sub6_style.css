@@ -195,3 +195,9 @@ body {
 .page_btn li{
     margin: 0 7px;
 }
+.top{
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    z-index: 9;
+}
