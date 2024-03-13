@@ -268,3 +268,9 @@ body {
     bottom: -70px;
     right: -100px;
 }
+.top{
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    z-index: 9;
+}
