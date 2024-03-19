@@ -338,3 +338,6 @@ textarea{
     bottom: 20px;
     z-index: 9;
 }
+.top img{
+    width: 130px;
+}
