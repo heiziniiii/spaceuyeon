@@ -72,7 +72,6 @@ a {
 
 html {
     font-size: 16px;
-    /*1rem 지정하기*/
 }
 
 body {
@@ -97,7 +96,7 @@ body {
     align-items: center;
     /* background-color: #ccc; */
 }
-#movie h1 img{
+#movie h1{
     /* 여기 비디오로 바꾸면됨! */
     position: absolute;
     top: 0px;
