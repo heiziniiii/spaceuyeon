@@ -117,7 +117,7 @@ body {
 #content_uyeon{
     width: 1320px;
     margin: 0 auto;
-    height: 2433px;
+    height: 2350px;
 }
 .content_drection{
     overflow: hidden;
@@ -197,15 +197,15 @@ body {
     width: 310px;
 }
 .content_value ul li img{
-    width: 100%;
-    height: 310px;
+    width: 70%;
+    height: 210px;
 }
 .content_value ul li p {
     margin: 20px 0;
     font-size: 20px;
 }
 .content_value ul li span {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 900;
 }
 #content_bi{
@@ -326,7 +326,4 @@ body {
     right: 20px;
     bottom: 20px;
     z-index: 9;
-}
-.top img{
-    width: 130px;
 }
