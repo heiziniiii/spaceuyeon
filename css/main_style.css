@@ -1,423 +1,564 @@
-<!DOCTYPE html>
-<html lang="ko">
+@charset "utf-8";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1400">
-    <title>공간유연</title>
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-    <!-- 웹폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/main_style.css">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/footer_style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes flow1 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes flow2 {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+legend,
+li,
+ol,
+p,
+select,
+table,
+td,
+textarea,
+th,
+ul,
+span,
+strong,
+em {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'S-CoreDream-3Light';
+    font-size: 16px;
+    line-height: 1.7em;
+}
+#wrap{
+    min-width: 1400px;
+}
+#header_wrap{
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+}
+#header {
+    margin: 0 auto;
+    width: 1320px;
+    height: 138px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #ccc; */
+}
+#movie h1{
+    /* 여기 비디오로 바꾸면됨! */
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 1920px;
+    margin-left: -960px;
+    z-index: -1;
+}
+.gnb {
+    display: flex;
+}
+
+.gnb li {
+    margin: 0 30px;
+}
+
+.gnb li a {
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+}
+.gnb li a:hover{
+    color: #ed6e1b;
+}
+#content_about {
+    margin: 0 auto;
+    overflow: hidden;
+    height: 900px;
+    background-image: url(../images/main/about_Bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+    text-shadow: 3px 3px 5px rgba(86, 86, 86, 0.745);
+}
+
+#content_about .title {
+    margin-top: 150px;
+    font-size: 40px;
+}
+
+#content_about .title span {
+    font-weight: 900;
+}
+
+#content_about .text_box {
+    overflow: hidden;
+    height: 470px;
+    width: 1320px;
+    background-color: #b4b4b44b;
+    border-radius: 10px 10px;
+    box-shadow: 10px 10px 10px rgba(34, 34, 34, 0.545);
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#content_about .text_box h3 {
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+
+#content_value {
+    overflow: hidden;
+    background-color: #ed6e1b;
+    margin: 0 auto;
+    height: 775px;
+    color: #fff;
+    font-weight: 900px;
+}
+
+.inner_value {
+    margin: 0 auto;
+    width: 1320px;
+    height: 775px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inner_value h1 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.inner_value ul {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.inner_value ul li {
+    width: 250px;
+}
+
+.inner_value ul li h4 {
+    width: 250px;
+    height: 250px;
+}
+
+.inner_value ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+.inner_value ul li p {
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+.inner_value ul li span {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.animated1 {
+    font-size: 35px;
+    position: relative;
+    height: 85px;
+    overflow: hidden;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    letter-spacing: 10px;
+}
+
+.animated2 {
+    font-size: 35px;
+    position: relative;
+    height: 85px;
+    overflow: hidden;
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    letter-spacing: 10px;
+}
+
+.track {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    white-space: nowrap;
+}
+
+.left {
+    animation: flow1 50s linear infinite;
+}
+
+.right {
+    animation: flow2 50s linear infinite;
+}
+
+#content_info {
+    overflow: hidden;
+    height: 2158px;
+    text-align: center;
+}
+#content_info h1 {
+    font-size: 40px;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+.inner_info>p{
+    margin-bottom: 64px;
+}
+.inner_info{
+    width: 1320px;
+    margin: 0 auto;
+}
+.inner_info ul{
+    position: relative;
+    height: 433px;
+    /* background-color: rgb(213, 187, 153); */
+}
+.inner_info span{
+    font-size: 20px;
+    font-weight: 900;
+}
+.info_text1{
+    float: right;
+    margin-top: 140px;
+}
+.info_text2{
+    float: left;
+    margin-top: 140px;
+}
+.info_text1 p,
+.info_text2 p{
+    margin-bottom: 20px;
+}
+
+.inner_info .liveimg{
+    position: absolute;
+    top: 1px;
+    left: -280px;
+}
+.galleryimg{
+    position: absolute;
+    top: 0px;
+    right: -280px;
+}
+.introductionimg{
+    position: absolute;
+    top: -1px;
+    left: -280px;
+}
+.lectureimg{
+    position: absolute;
+    top: -2px;
+    right: -280px;  
+}
+#banner {
+    background-image: url(../images/main/goods_banner/goods_banner_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 683px;
+    overflow: hidden;
+}
+
+.inner_banner {
+    margin: 0 auto;
+    width: 1320px;
+    height: 683px;
+    padding-top: 70px;
+    overflow: hidden;
+}
+
+.inner_banner h3 {
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    position: relative;
+}
+
+.inner_banner img {
+    display: block;
+}
+
+.note {
+    position: absolute;
+    top: 20px;
+    left: 65px;
+}
+
+.mug {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+
+.inner_banner a {
+    display: inline-block;
+}
 
 
-<body>
-    <div id="wrap">
-        <div id="header_wrap">
-            <div id="header">
-                <h1><a href="./index.html"><img src="./images/main/logo.svg" alt="logo"></a></h1>
-                <ul class="gnb">
-                    <li><a href="./sub1.html">공간유연</a></li>
-                    <li><a href="./sub2.html">시설안내</a></li>
-                    <li><a href="./sub3.html">프로그램 및 예약</a></li>
-                    <li><a href="./sub4.html">STORE</a></li>
-                    <li><a href="./sub5.html">EVENT</a></li>
-                    <li><a href="./sub6.html">공지사항</a></li>
-                </ul>
-            </div>
-            <div id="movie">
-                <h1><video src="./media/u_yeon_mv.mp4" autoplay loop muted></video></h1>
-                <source src="./media/u_yeon_mv.mp4" type="video/mp4">
-                <video muted="" preload="true" loop autoplay webkit-playsinline="webkit-playsinline" playsinline="playsinline"></video>
-            </div>
-        </div>
+#content_perfomance {
+    overflow: hidden;
+    height: 1000px;
+    background: url(../images/main/poster/poster_bg_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
-        <div id="content_about">
-            <p class="title">Art in everyday life, <span>공간유연</span></p>
-            <div class="text_box">
-                <h3 data-aos="fade-up" data-aos-duration="1000">About</h3>
-                <p data-aos="fade-up" data-aos-duration="1000">국내외 아티스트 전시, 공연, 클래스 등 다양한 프로그램을 운영하여 아티스트의 활동 공간 제공,
-                    <br>문화 예술 체험을 필요로하는 사람들에게 문화 향유 기회를 제공하고 있습니다.
-                    <br>일상 속에서 만나는 예술, 새로운 경험을 선사하는 복합 문화 공간
-                    <br>공간유연에 오신 것을 환영합니다.
-                </p>
-            </div>
-        </div>
-        <div id="content_value">
-            <div class="inner_value">
-                <h1>Value Points</h1>
-                <p>공간유연은 공간,아티스트,방문객이 하나로 연결되어 다양하고 새로운 가치를 만들어내는 문화 공간입니다.</p>
-                <ul>
-                    <li>
-                        <h4><img src="./images/main/program.svg" alt="program"></h4>
-                        <p>누적 운영 프로그램</p>
-                        <span class="counter">522</span>
-                    </li>
-                    <li>
-                        <h4><img src="./images/main/artist.svg" alt="artist"></h4>
-                        <p>함께한 아티스트</p>
-                        <span class="counter">1,023</span>
-                    </li>
-                    <li>
-                        <h4><img src="./images/main/visit.svg" alt="visit"></h4>
-                        <p>누적 방문객</p>
-                        <span class="counter">205,671</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div id="textflow">
-            <div class="animated1">
-                <div class="track left">
-                    <p>
-                        ART IN EVERYDAY LIFE, A COMPLEX CULTURAL SPACE THAT PROVIDES NEW EXPERIENCES. ART IN EVERYDAY
-                        LIFE, A COMPLEX CULTURAL SPACE THAT PROVIDES NEW EXPERIENCES. ART IN EVERYDAY LIFE, A COMPLEX
-                        CULTURAL SPACE THAT PROVIDES NEW EXPERIENCES.
-                    </p>
-                </div>
-            </div>
-            <div class="animated2">
-                <div class="track right">
-                    <p>
-                        ART IN EVERYDAY LIFE, A COMPLEX CULTURAL SPACE THAT PROVIDES NEW EXPERIENCES. ART IN EVERYDAY
-                        LIFE, A COMPLEX CULTURAL SPACE THAT PROVIDES NEW EXPERIENCES. ART IN EVERYDAY LIFE, A COMPLEX
-                        CULTURAL SPACE THAT PROVIDES NEW EXPERIENCES.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div id="content_info">
-            <div class="inner_info">
-                <h1>시설안내</h1>
-                <p>다양한 프로그램을 즐길 수 있는 공간유연의 홀을 소개합니다</p>
-                <ul>
-                    <li class="liveimg"><img src="./images/main/Space_introduction/livehall.png" alt="livehall"></li>
-                    <li class="info_text1">
-                        <p><span>유연 라이브홀</span></p>
-                        <p>다양한 뮤지션들이 펼치는
-                            <br>환상적인 무대와 뜨거운 열정을 느끼며
-                            <br>특별한 추억을 만들 수 있습니다.
-                        </p>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="galleryimg"><img src="./images/main/Space_introduction/gallery.png" alt="gallery"></li>
-                    <li class="info_text2">
-                        <p><span>유연 갤러리</span></p>
-                        <p>국내외 아티스트들의
-                            <br>사진, 회화, 조각, 설치미술 등
-                            <br>다양한 장르의 예술 작품을
-                            <br>감상할 수 있습니다.
-                        </p>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="introductionimg"><img src="./images/main/Space_introduction/small_theater.png"
-                            alt="theater"></li>
-                    <li class="info_text1">
-                        <p><span>유연 소극장</span></p>
-                        <p>국내외 아티스트들의
-                            <br>다양한 장르와 스토리의 공연을
-                            <br>관람할 수 있는 소극장입니다.
-                        </p>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="lectureimg"><img src="./images/main/Space_introduction/lecture_room.png" alt="lecture">
-                    </li>
-                    <li class="info_text2">
-                        <p><span>유연 아카데미홀</span></p>
-                        <p>공간유연의
-                            <br>다양한 예술 교육 프로그램을
-                            <br>진행하는 아카데미 홀 입니다.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div id="banner">
-            <div class="inner_banner">
-                <h3 data-aos="fade-down" data-aos-duration="1000">
-                    <img src="./images/main/goods_banner/sensuous.svg" alt="sensuous">
-                    <img src="./images/main/goods_banner/line1.svg" alt="line">
-                    <img src="./images/main/goods_banner/items.svg" alt="items">
-                </h3>
+#content_perfomance2 {
+    overflow: hidden;
+    height: 1000px;
+    background: url(../images/main/poster/poster_bg_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
-                <h3>
-                    <img class="note" data-aos="fade-up" data-aos-duration="1500"
-                        src="./images/main/goods_banner/note.svg" alt="note">
-                    <img src="./images/main/goods_banner/goods_round.svg" alt="goods_round">
-                    <img data-aos="fade-right" data-aos-offset="500" data-aos-easing="ease-in-sine"
-                        src="./images/main/goods_banner/can_only_be.svg" alt="can_only_be">
-                    <img data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine"
-                        src="./images/main/goods_banner/seen_in.svg" alt="seen_in">
-                </h3>
+#slide_wrap {
+    padding-top: 100px;
+    text-align: center;
+}
+#slide_wrap h1{
+    font-size: 40px;
+}
+#slide_wrap h1,
+#slide_wrap p {
+    margin-bottom: 25px;
+}
 
-                <h3><img data-aos="flip-up" data-aos-duration="2000" data-aos-delay="100"
-                        src="./images/main/goods_banner/space_u_yeon.svg" alt="space_u_yeon">
-                    <img src="./images/main/goods_banner/store.svg" alt="store">
-                    <img src="./images/main/goods_banner/goods_round2.svg" alt="goods_round2">
-                    <img class="mug" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"
-                        data-aos-offset="400" src="./images/main/goods_banner/mug.svg" alt="mug">
-                </h3>
+#slide {
+    width: 1200px;
+    height: 530px;
+    margin: 0px auto;
+    padding: 100px 30px;
+    overflow: hidden;
+}
 
-                <h3><img data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine"
-                        src="./images/main/goods_banner/see_it.svg" alt="see_it">
-                    <img src="./images/main/goods_banner/line2.svg" alt="line2">
-                    <a href="./sub4.html"><img data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine"
-                            src="./images/main/goods_banner/click1.svg" alt="click1"></a>
-                </h3>
-            </div>
-        </div>
-        <div id="content_perfomance">
-            <div id="slide_wrap">
-                <h1>Exhibition&Performance</h1>
-                <p>깊은 감동과 영감을 선사하는 유연 전시&공연 프로그램</p>
-                <div id="slide" class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/performance_poster1.png"
-                                            alt="performance_poster1"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/performance_poster2.png"
-                                            alt="performance_poster2"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/performance_poster3.png"
-                                            alt="performance_poster3"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/performance_poster4.png"
-                                            alt="performance_poster4"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/performance_poster5.png"
-                                            alt="performance_poster5"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
+#slide ul li a {
+    display: block;
+    margin: 5px;
+}
 
-        </div>
-        <div id="content_perfomance2">
-            <div id="slide_wrap">
-                <h1>Academy</h1>
-                <p>다양한 체험을 통해 삶의 질을 높이는 유연 아카데미 프로그램</p>
-                <div id="slide" class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/academy_poster1.png" alt="academy_poster1"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/academy_poster2.png" alt="academy_poster2"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/academy_poster3.png" alt="academy_poster3"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/academy_poster4.png" alt="academy_poster4"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="swiper-slide">
-                            <li><a href="javascript:return false;">
-                                    <div class="screen">
-                                        <img src="./images/main/poster/academy_poster5.png" alt="academy_poster5"></img>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
+.screen {
+    position: relative;
+    overflow: hidden;
+}
 
-        </div>
-        <div id="content_rental">
-            <div class="inner_rental">
-                <div class="rental_text" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100"
-                    data-aos-delay="100">
-                    <h1>Reservation & Rental</h1>
-                    <h4>이용안내</h4>
-                    <p>매주 월요일, 1월 1일, 설날, 추석 휴관
-                        <br>운영시간 : 10:00~20:00
-                        <br>대표번호 : 070-2345-6789
-                        <br>E-mail : info@spaceuy.com
-                    </p>
-                </div>
-                <a href="./sub3.html">예매&대관 바로가기</a>
-            </div>
-        </div>
-        <div id="content_event">
-            <h1>Event</h1>
-            <p>공간유연에서 마음껏 즐기고 이벤트 참여하세요!</p>
-            <ul class="inner_event">
-                <li>
-                    <h4><img src="./images/main/event/bell.svg" alt="bell"></h4>
-                    <h3 data-aos="fade-up">유연 골든벨</h3>
-                    <p data-aos="fade-up">공간 유연을 꼼꼼하게
-                        <br>둘러봤다면 쉬운 문제!
-                    </p>
-                </li>
-                <li>
-                    <h4><img src="./images/main/event/camera.svg" alt="camera"></h4>
-                    <h3 data-aos="fade-up" data-aos-delay="200">시크릿 포토스팟</h3>
-                    <p data-aos="fade-up" data-aos-delay="200">나만아는 공간유연의
-                        <br>멋진 포토 스팟을 공유해주세요!
-                    </p>
-                </li>
-                <li>
-                    <h4><img src="./images/main/event/sns.svg" alt="sns"></h4>
-                    <h3 data-aos="fade-up" data-aos-delay="400">SNS 인증 챌린지</h3>
-                    <p data-aos="fade-up" data-aos-delay="400">공간유연에서 체험한 프로그램을
-                        <br>SNS에 인증해주세요!
-                    </p>
-                </li>
-                <li>
-                    <h4><img src="./images/main/event/review.svg" alt="review"></h4>
-                    <h3 data-aos="fade-up" data-aos-delay="600">유연 설문조사</h3>
-                    <p data-aos="fade-up" data-aos-delay="600">공간유연에서 즐거운 시간 보내셨나요?
-                        <br>더 나은 유연을 위한 설문조사!
-                    </p>
-                </li>
-            </ul>
+.screen img {
+    margin: 0 5%;
+    width: 90%;
+    display: block;
+}
 
-        </div>
-        <div id="footer">
-            <div class="inner_footer">
-                <h1><img src="./images/main/footer_logo.svg" alt="footer_logo"></h1>
-                <ul class="foot_text1">
-                    <li><a href="javascript:return false;">개인정보 처리방침</a></li>
-                    <li><a href="javascript:return false;">이용약관</a></li>
-                    <li><a href="javascript:return false;">이메일 무단수집거부</a></li>
-                    <li><a href="javascript:return false;">배송 교환 환불 정책</a></li>
-                    <li><a href="javascript:return false;">대관안내</a></li>
-                </ul>
-                <ul class="foot_text2">
-                    <li>공간유연</li>
-                    <li>대표 김혜진</li>
-                    <li>사업자등록번호 123-45-67890</li>
-                    <li>통신판매업신고번호: 2019-서울-0000</li>
-                </ul>
-                <div class="address">
-                    <ul>
-                        <li><span>ADDRESS</span></li>
-                        <li>서울특별시 성동구 성수동 2가
-                            <br>Seongsu-dong 2-ga, Seongdong-gu, Seoul, Republic of Korea
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><span>CONTACT</span></li>
-                        <li>대표번호 070-2345-6789
-                            <br>이메일 info@spaceuy.com
-                        </li>
-                    </ul>
-                </div>
-                <p>© 2019 - 2024 Space UYeon. All rights reserved.</p>
-            </div>
-        </div>
-        <p class="top">
-            <a href="index.html#header_wrap"><img src="./images/top.svg" alt="top"></a>
-        </p>
-        
-    </div>
+.swiper-slide-active+.swiper-slide+.swiper-slide .bottom {
+    bottom: 0%;
+}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script src="js/jquery-latest.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $('.counter').counterUp({
-                delay: 10,
-                time: 1500
-            });
-        });
-    </script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            observer: true,
-            observeParents: true,
-            centeredSlides: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
-</body>
+.swiper-slide,
+.swiper-slide-active {
+    transform: translateY(-80px);
+    transition: transform 1s;
+}
 
-</html>
+.swiper-slide-active.swiper-slide+.swiper-slide {
+    transform: translateY(-10px);
+}
+
+.swiper-slide-active+.swiper-slide+.swiper-slide,
+.swiper-slide-active {
+    transform: translateY(80px);
+}
+
+
+.swiper-button-prev {
+    left: 100px;
+}
+
+.swiper-button-next {
+    left: 200px;
+}
+
+.swiper-button-prev {
+    content: url(../images/main/poster/left_arrow.png);
+    width: 50px;
+    height: 42px;
+}
+
+.swiper-button-next {
+    content: url(../images/main/poster/right_arrow.png);
+    width: 50px;
+    height: 42px;
+}
+
+#content_rental {
+    overflow: hidden;
+    height: 450px;
+    background-image: url(../images/main/reservation_bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.inner_rental {
+    margin: 0 auto;
+    width: 1320px;
+    position: relative;
+}
+
+.rental_text {
+    color: #ffffff;
+    position: absolute;
+    top: 80px;
+    right: 200px;
+}
+
+.rental_text h1 {
+    color: #ed6e1b;
+    margin-bottom: 130px;
+    font-size: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.rental_text h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.inner_rental a{
+    display: inline-block;
+    position: absolute;
+    top: 150px;
+    right: 202px;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    font-weight: 900;
+}
+.inner_rental a:hover{
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    font-weight: 900;
+}
+#content_event{
+    margin: 0 auto;
+    width: 1320px;
+    height: 726px;
+    padding-top: 100px;
+    text-align: center;
+    overflow: hidden;
+}
+#content_event h1{
+    font-size: 40px;
+}
+#content_event>p{
+    margin: 20px 0;
+}
+.inner_event{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.inner_event li{
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 400px;
+}
+.inner_event li img{
+    width: 90%;
+    height: 90%;
+}
+.inner_event li h4{
+    width: 270px;
+    height: 270px;
+    border-radius: 50% 50%;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.inner_event li img{
+    width: 200px;
+}
+.inner_event li h4:hover{
+    box-shadow: 10px 10px 40px rgba(146, 146, 146, 0.407) inset;
+    transform: translate(5px, -5px);
+}
+.inner_event li h3{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.top{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9;
+}
+.top img{
+    width: 130px;
+}
